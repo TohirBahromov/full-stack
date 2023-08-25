@@ -1,4 +1,4 @@
-import { AdminModel } from "../models/admins.js"
+import { AdminModel } from "../models/Admins.js"
 
 // Create
 export const createAdmin = async (req,res) => {
