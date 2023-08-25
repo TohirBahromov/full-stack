@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_DB, {
 // middlewares
 app.use(cors({
   credentials:true,
-  origin:"http://localhost:3000"
+  origin:"https://class11a.netlify.app"
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
