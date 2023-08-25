@@ -1,7 +1,6 @@
 import { React, useState, useRef,useEffect } from 'react';
 import "../mainpage/mainpage.css";
 import "../mainpage/mainpageRes.css";
-import classmates from '../../sources/classmates';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/navbar/navbar';
 import Ads from '../../components/ads/ads';
@@ -10,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { selectClassmate, unselectClassmate } from '../../redux/classmatesSlice';
 import useFetch from '../../hooks/useFetch';
+import classmates from '../../sources/classmates';
 
 export default function Mainpage() {
 

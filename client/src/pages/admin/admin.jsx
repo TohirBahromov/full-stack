@@ -6,7 +6,6 @@ import Navbar from '../../components/admin/navbar/navbar'
 import AdminComponent from '../../components/admin/admins/adminComponent'
 import Users from '../../components/admin/users/users'
 import { Link } from "react-router-dom"
-import admindashlinks from '../../sources/admindashlinks'
 import { useSelector, useDispatch } from "react-redux"
 import { setActive } from '../../redux/adminPages'
 import Anns from '../../components/admin/anns/anns'
@@ -15,6 +14,7 @@ import Advs from '../../components/admin/advs/advs'
 import Classmates from '../../components/admin/classmates/classmates'
 import CommentsAdmin from '../../components/admin/comments/commentsAdmin'
 import useFetch from '../../hooks/useFetch'
+import admindashlinks from '../../sources/admindashlinks'
 
 export default function Admin() {
 
