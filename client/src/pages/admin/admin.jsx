@@ -9,14 +9,12 @@ import { Link } from "react-router-dom"
 import admindashlinks from '../../sources/admindashlinks'
 import { useSelector, useDispatch } from "react-redux"
 import { setActive } from '../../redux/adminPages'
-import Ismoil from "../../images/class/Ismo.jpg"
 import Anns from '../../components/admin/anns/anns'
 import Lentas from '../../components/admin/lentas/lentas'
 import Advs from '../../components/admin/advs/advs'
 import Classmates from '../../components/admin/classmates/classmates'
 import CommentsAdmin from '../../components/admin/comments/commentsAdmin'
 import useFetch from '../../hooks/useFetch'
-// import moment from "moment"
 
 export default function Admin() {
 
