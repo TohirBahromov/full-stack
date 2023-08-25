@@ -77,12 +77,12 @@ export default function Admin() {
               {admindashlinks.map(a => {
                 return(
                   <li className={active === a.id ? 'active' : ""} key={a.id} onClick={() => handleActive(a.id)}>
-                    <a href=''>
+                    <p>
                       <div className="icon">
                         <i className={`fa-solid ${a.icon}`}></i>
                       </div>
                       <div className="txt">{a.model}</div>
-                    </a>
+                    </p>
                   </li>
                 )
               })}
