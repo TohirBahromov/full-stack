@@ -1,0 +1,64 @@
+/* Carousel Responsive */
+
+@media(max-width:1200px){
+  .square-card{
+    width: calc(100% / 4 - 16px);
+  }
+}
+@media(max-width:990px){
+  .square-card{
+    width: calc(100% / 3 - 16px);
+  }
+}
+@media(max-width:765px){
+  .square-card{
+    width: calc(100% / 2 - 16px);
+  }
+}
+
+/* Responsive */
+
+@media(max-width:990px){
+  .all_massive-news{
+    flex-direction: column;
+  }
+  .announcements-main_b{
+    width: 100%;
+  }
+  .lentanews-main_b{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .lenta .content_{
+    display: flex;
+    align-items: center;
+  }
+  .lenta .content_ .img{
+    display: block;
+  }
+  .link-router_lenta{
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+@media(max-width:768px){
+  .main-news_blocks{
+    flex-direction: column;
+    margin: 0;
+  }
+  .main-news_blocks a{
+    width: 100%;
+  }
+  .main_first{
+    flex-direction: column;
+  }
+  .main-news_blocks div .img-content img{
+    border-radius: 5px;
+  }
+  .main-news_img{
+    height: 300px;
+  }
+  .header_web{
+    margin-left: 35px;
+  }
+}

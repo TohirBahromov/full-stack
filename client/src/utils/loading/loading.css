@@ -1,0 +1,86 @@
+.loading-wrapper{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+}
+.loading-float{
+  display: flex;
+  flex-direction: column;
+}
+.loading{
+  /* padding: 20px; */
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  position: relative;
+  /* animation-name: loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite; */
+}
+.spans{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  height: 25px;
+}
+.spans div{
+  width: 10px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #000e;
+}
+.spans .st{
+  height: 15px;
+  animation: loadingSt;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+.spans .nd{
+  height: 18px;
+  animation: loadingNd;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+.spans .rd{
+  height: 21px;
+  animation: loadingRd;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+@keyframes loadingSt{
+  0%{
+    height: 15px;
+  }
+  50%{
+    height: 21px;
+  }
+  100%{
+    height: 15px;
+  }
+}
+@keyframes loadingNd{
+  0%{
+    height: 18px;
+  }
+  50%{
+    height: 21px;
+  }
+  100%{
+    height: 18px;
+  }
+}
+@keyframes loadingRd{
+  0%{
+    height: 21px;
+  }
+  50%{
+    height: 15px;
+  }
+  100%{
+    height: 21px;
+  }
+}

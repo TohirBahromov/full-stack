@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat&display=swap');
+body,h1,p,h2,h3,h4,h5,ul,li{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  color: #212529;
+  text-decoration: none;
+}
+ul li{
+  list-style-type: none;
+}
+.unacceptable{
+  border: 1px solid #c9002c !important;
+}
+.locked{
+  background-color: #ccc !important;
+  color: #fff !important;
+}

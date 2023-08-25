@@ -1,0 +1,57 @@
+.wrapper-error{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper-error main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-error main .area{
+  width: 500px;
+  height: 500px;
+  background: url("../../images/errorpage.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.wrapper-error main .area .content{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: max-content;
+  width: max-content;
+  /* top: 0; */
+  margin: auto;
+  /* margin-top: 80%; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper-error main .area h1{
+  color: royalblue;
+  margin-bottom: 10px;
+}
+.wrapper-error main .area span{
+  width: 100%;
+  background-color: royalblue;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* @media(max-height:668px){
+  .wrapper-error main .area .content{
+    margin-top: 100%;
+  }
+}
+@media(max-width:535px){
+  .wrapper-error main .area .content{
+    margin-top: 100%;
+  }
+} */

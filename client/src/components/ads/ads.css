@@ -1,0 +1,15 @@
+.adv__{
+  width: 100%;
+  height: 232px;
+}
+.adv__ img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media(max-width:990px){
+  .adv__{
+    display: none;
+  }
+}

@@ -1,0 +1,128 @@
+.register--header{
+  margin: 6px 32px 16px;
+  padding-top: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper-register{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+/* .wrapper-register .container{
+  flex-grow: 1;
+} */
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.go-singIn a{
+  color: royalblue;
+  text-decoration: underline;
+}
+.logo-line-register{
+  width: 70px;
+  height: 50px;
+}
+.logo-line-register img{
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+}
+.form-line{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form-line h1{
+  font-size: 30px;
+  margin-top: 40px;
+}
+.reg-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_reg{
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form_reg div{
+  width: 100%;
+  margin:5px 0;
+}
+.names{
+  width: 100%;
+}
+.names input{
+  width: calc(50% - 0.25rem);
+}
+.password{
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+input{
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.pass-input{
+  border: none;
+}
+.hide-pass-icon,.show-pass-icon{
+  width: 25px;
+  height: 25px;
+}
+.password .icon{
+  width: 40px;
+}
+.create button{
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 4px;
+  background-color: royalblue;
+  color: #fff;
+  padding: 10px;
+}
+
+@media(max-width:768px){
+  .register--header{
+    flex-direction: column;
+  }
+  .register--header .go-singIn{
+    margin-top: 10px;
+  }
+  .form-line h1{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media(max-height:668px){
+  .form-line h1{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .register--header .go-singIn{
+    font-size: 12px;
+  }
+  .wrapper{
+    justify-content:initial;
+    height: max-content;
+  }
+}
