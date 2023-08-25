@@ -1,8 +1,7 @@
-import React,{useEffect, useState} from 'react'
+import React,{useState} from 'react'
 import "../profile/profile.css"
 import { Link } from "react-router-dom"
 import logo from "../../images/logo.png"
-// import Ismoil from "../../images/ismoil.jpg"
 import {useSelector} from "react-redux"
 import useFetch from '../../hooks/useFetch'
 import axios from 'axios'
@@ -10,7 +9,6 @@ import Loading from '../../utils/loading/loading'
 
 export default function Profile() {
 
-  // const [myData,setMyData] = useState()
   const {data:usersData,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/user")
   const {data:myData} = useSelector(state => state.user)
   const myInfo = usersData?.find(d => d._id === myData?.userId)
@@ -65,6 +63,7 @@ export default function Profile() {
       id:myData?.userId,
       name:newNickname
     })
+    console.log(res)
     reFetch()
     setIsShownnick(false)
   }
@@ -74,6 +73,7 @@ export default function Profile() {
       id:myData?.userId,
       bio:newBio
     })
+    console.log(res);
     reFetch()
     setIsShownBio(false)
   }
@@ -83,6 +83,7 @@ export default function Profile() {
       id:myData?.userId,
       telegram:newTg
     })
+    console.log(res)
     reFetch()
     setIsShownTg(false)
   }
@@ -92,6 +93,7 @@ export default function Profile() {
       id:myData?.userId,
       instagram:newInsta
     })
+    console.log(res)
     reFetch()
     setIsShownInsta(false)
   }

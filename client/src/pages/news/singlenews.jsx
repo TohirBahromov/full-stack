@@ -6,7 +6,6 @@ import Footer from "../../components/footer/footer"
 import { Link, useLocation } from 'react-router-dom'
 import {useSelector} from "react-redux"
 import useFetch from '../../hooks/useFetch'
-import Loading from '../../utils/loading/loading'
 
 export default function Singlenews() {
 

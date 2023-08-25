@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { selectClassmate, unselectClassmate } from '../../redux/classmatesSlice';
 import useFetch from '../../hooks/useFetch';
-import Loading from '../../utils/loading/loading';
 
 export default function Mainpage() {
 
@@ -72,7 +71,6 @@ export default function Mainpage() {
   },[])
   const [slide, setSlide] = useState(0)
   const {isShown,...selectedClassmate} = useSelector(state => state.classmate)
-  const commentedUser = useSelector(state => state.commentUser)
 
   const widthCard = widthBox + 19
   const widthCarouselFloat = widthCard * (lastClassmates.length + 1)

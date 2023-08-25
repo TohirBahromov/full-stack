@@ -9,10 +9,9 @@ import News from "./pages/news/news";
 import Singlenews from "./pages/news/singlenews";
 import Profile from "./pages/profile/profile";
 import Admin from "./pages/admin/admin";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getUserInfo } from "./redux/userSlice";
-import { getAllUsersInfo } from "./redux/allUsersSlice"
 function App() {
 
   axios.defaults.withCredentials = true;

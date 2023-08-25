@@ -6,7 +6,6 @@ import Footer from '../../components/footer/footer'
 import { Link } from 'react-router-dom'
 import {useSelector} from "react-redux"
 import useFetch from '../../hooks/useFetch'
-import Loading from '../../utils/loading/loading'
 
 export default function News() {
 
@@ -33,9 +32,6 @@ export default function News() {
   const [lastLentasNum,setLastLentasNum] = useState(6)
   const { responsive } = useSelector(state => state.responsive)
 
-  // const lentas = lentanews.map(l => {
-  //   return l
-  // })
   const lentanewsReverse = [...data]?.reverse()
   const lastLentas = lentanewsReverse?.slice(0, lastLentasNum)
 
