@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/index.html">
+      <BrowserRouter basename="/React">
         <Routes>
           <Route path="/" element={<Mainpage />}/>
           <Route path="/register" element={<Register />} />
