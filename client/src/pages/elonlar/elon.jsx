@@ -6,11 +6,10 @@ import Footer from "../../components/footer/footer"
 import { Link, useLocation } from 'react-router-dom'
 import {useSelector} from "react-redux"
 import useFetch from '../../hooks/useFetch'
-import Loading from '../../utils/loading/loading'
 
 export default function Elon() {
 
-  const {data,loading} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data} = useFetch("https://classmatesweb.onrender.com/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
