@@ -11,7 +11,7 @@ import Loading from '../../utils/loading/loading'
 export default function Profile() {
 
   // const [myData,setMyData] = useState()
-  const {data:usersData,loading,reFetch} = useFetch("http://localhost:8800/api/user")
+  const {data:usersData,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/user")
   const {data:myData} = useSelector(state => state.user)
   const myInfo = usersData?.find(d => d._id === myData?.userId)
 
@@ -19,7 +19,7 @@ export default function Profile() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("http://localhost:8800/api/upload",formdata)
+      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -52,7 +52,7 @@ export default function Profile() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.put("http://localhost:8800/api/user", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/user", {
       id:myData?.userId,
       img:imgUrl
     })
@@ -61,7 +61,7 @@ export default function Profile() {
   }
   const submitName = async (e) => {
     e.preventDefault()
-    const res = await axios.put("http://localhost:8800/api/user", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/user", {
       id:myData?.userId,
       name:newNickname
     })
@@ -70,7 +70,7 @@ export default function Profile() {
   }
   const submitBio = async (e) => {
     e.preventDefault()
-    const res = await axios.put("http://localhost:8800/api/user", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/user", {
       id:myData?.userId,
       bio:newBio
     })
@@ -79,7 +79,7 @@ export default function Profile() {
   }
   const submitTg = async (e) => {
     e.preventDefault()
-    const res = await axios.put("http://localhost:8800/api/user", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/user", {
       id:myData?.userId,
       telegram:newTg
     })
@@ -88,7 +88,7 @@ export default function Profile() {
   }
   const submitInsta = async (e) => {
     e.preventDefault()
-    const res = await axios.put("http://localhost:8800/api/user", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/user", {
       id:myData?.userId,
       instagram:newInsta
     })
@@ -120,7 +120,7 @@ export default function Profile() {
               <div className="account-setting_wind">
                 <div className="logo-profile_b">
                   <div className="logo">
-                    <img src={myInfo?.img && `http://localhost:8800/${myInfo.img}`} alt="" />
+                    <img src={myInfo?.img && `https://classmatesweb.onrender.com/${myInfo.img}`} alt="" />
                     {file && (
                     <div className="editing-svg_prof" onClick={submitImg}>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

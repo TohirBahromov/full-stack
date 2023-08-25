@@ -22,7 +22,7 @@ export default function Admin() {
 
   const [isClosed, setIsClosed] = useState(false)
   const [isResp, setIsResp] = useState(false)
-  const {data} = useFetch("http://localhost:8800/api/user")
+  const {data} = useFetch("https://classmatesweb.onrender.com/api/user")
   const myData = useSelector(state => state.user)
   const myUser = data?.find(d => d._id === myData?.data.userId)
 
@@ -93,7 +93,7 @@ export default function Admin() {
           <div className="admin-prof">
             <div className="prof-img">
               <div className="img">
-                <img src={myUser?.img && `http://localhost:8800/${myUser?.img}`} alt="" />
+                <img src={myUser?.img && `https://classmatesweb.onrender.com/${myUser?.img}`} alt="" />
               </div>
             </div>
           </div>

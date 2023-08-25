@@ -45,7 +45,7 @@ export default function Register() {
     if(formData.username === "" || formData.surname === "" || formData.email === "" || formData.password === ""){
       alert("Inputlardan biri kiritilmagan");
     }else{
-      const res = await axios.post("http://localhost:8800/api/auth/register", {
+      const res = await axios.post("https://classmatesweb.onrender.com/api/auth/register", {
         name:formData.username,
         email:formData.email,
         password:formData.password

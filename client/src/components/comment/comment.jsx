@@ -9,10 +9,10 @@ import axios from 'axios'
 
 export default function Comment() {
 
-  const {data:commentsData,loading,reFetch} = useFetch("http://localhost:8800/api/comment")
-  const {data:usersData} = useFetch("http://localhost:8800/api/user")
-  const {data:myData} = useFetch("http://localhost:8800/api/auth/profile")
-  const {data:adminsData} = useFetch("http://localhost:8800/api/admin")
+  const {data:commentsData,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/comment")
+  const {data:usersData} = useFetch("https://classmatesweb.onrender.com/api/user")
+  const {data:myData} = useFetch("https://classmatesweb.onrender.com/api/auth/profile")
+  const {data:adminsData} = useFetch("https://classmatesweb.onrender.com/api/admin")
   const isAdmin = adminsData?.find(d => d.signId === myData?.userId)
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
@@ -83,7 +83,7 @@ export default function Comment() {
         alert("kamentariya kiritmagansiz")
       }else{
         const senderInfo = usersData?.find(u => u._id === myData?.userId)
-        const res = await axios.post("http://localhost:8800/api/comment",{
+        const res = await axios.post("https://classmatesweb.onrender.com/api/comment",{
           sender: myData?.userId,
           senderImg: senderInfo?.img,
           text: newComment.comment
@@ -103,7 +103,7 @@ export default function Comment() {
       document.querySelector(".comment-send").classList.remove("hidden")
       document.querySelector(".comment-edit_s").classList.add("hidden")
     }else{
-      const res = await axios.put('http://localhost:8800/api/comment',{
+      const res = await axios.put('https://classmatesweb.onrender.com/api/comment',{
         id:newComment.commentId,
         text:newComment.comment
       })
@@ -117,7 +117,7 @@ export default function Comment() {
     }
   }
   const handleDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:8800/api/comment/${id}`)
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/comment/${id}`)
     setIsEditing(null)
     reFetch()
   }
@@ -127,7 +127,7 @@ export default function Comment() {
       <div className="comment" key={c._id}>
       <div className="user">
         <div className="img-user" onClick={() => selectCommentedUser(c.sender)}>
-          <img src={usersData?.find(d => d._id === c.sender)?.img && `http://localhost:8800/${usersData?.find(d => d._id === c.sender)?.img}`} alt="" />
+          <img src={usersData?.find(d => d._id === c.sender)?.img && `https://classmatesweb.onrender.com/${usersData?.find(d => d._id === c.sender)?.img}`} alt="" />
         </div>
         <div className="text-user">
           <p>{c.text}</p>
@@ -210,7 +210,7 @@ export default function Comment() {
               <div className="wrapper-upm">
                 <div className="header">
                   <div className="img">
-                    <img src={commentedUser.img && `http://localhost:8800/${commentedUser.img}`} alt="" />
+                    <img src={commentedUser.img && `https://classmatesweb.onrender.com/${commentedUser.img}`} alt="" />
                   </div>
                   <div className="username">
                     <p>{commentedUser.username}</p>

@@ -11,7 +11,7 @@ export default function CommentsAdmin() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("http://localhost:8800/api/comment")
+  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/comment")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -42,7 +42,7 @@ export default function CommentsAdmin() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("http://localhost:8800/api/upload",formdata)
+      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -66,7 +66,7 @@ export default function CommentsAdmin() {
 
   const handleDelete = async (e) => {
     e.preventDefault()
-    const res = await axios.delete(`http://localhost:8800/api/comment/${formData.comId}`)
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/comment/${formData.comId}`)
     dispatch(deleteModalClose())
     setFormData({
       comId:"",
@@ -100,7 +100,7 @@ export default function CommentsAdmin() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.senderImg && `http://localhost:8800/${u.senderImg}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.senderImg && `https://classmatesweb.onrender.com/${u.senderImg}`} alt="" /></div></td>
                       <td><div>{u.sender}</div></td>
                       <td><div>{u.text}</div></td>
                       <td><div>{u.createdAt && changeDate(u.createdAt.toString())}</div></td>

@@ -10,8 +10,8 @@ import Loading from '../../utils/loading/loading'
 
 export default function News() {
 
-  const {data,loading:lentaload} = useFetch("http://localhost:8800/api/lenta")
-  const {data:annsData,loading:annload} = useFetch("http://localhost:8800/api/announcement")
+  const {data,loading:lentaload} = useFetch("https://classmatesweb.onrender.com/api/lenta")
+  const {data:annsData,loading:annload} = useFetch("https://classmatesweb.onrender.com/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -44,7 +44,7 @@ export default function News() {
       <Link to={`/news/${n._id}`} key={n._id} className='ref_news'>
         <div className="news-block">
           <div className="img">
-            <img src={n.img && `http://localhost:8800/${n.img}`} alt="" />
+            <img src={n.img && `https://classmatesweb.onrender.com/${n.img}`} alt="" />
           </div>
           <div className="text-content_res">
             <div className="date"><p>{n.createdAt && changeDate(n.createdAt.toString())}</p></div>

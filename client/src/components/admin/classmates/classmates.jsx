@@ -11,7 +11,7 @@ export default function Classmates() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("http://localhost:8800/api/classmate")
+  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/classmate")
 
   const newDatas = [...data].reverse()
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ export default function Classmates() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("http://localhost:8800/api/upload",formdata)
+      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -141,7 +141,7 @@ export default function Classmates() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.put("http://localhost:8800/api/classmate", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/classmate", {
       id:formData.classId,
       img:imgUrl,
       name:formData.className,
@@ -172,7 +172,7 @@ export default function Classmates() {
   }
   const handleDelete = async (e) => {
     e.preventDefault()
-    const res = await axios.delete(`http://localhost:8800/api/classmate/${formData.classId}`)
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/classmate/${formData.classId}`)
     dispatch(deleteModalClose())
     setFormData({
       classId:"",
@@ -220,7 +220,7 @@ export default function Classmates() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img && `http://localhost:8800/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img && `https://classmatesweb.onrender.com/${u.img}`} alt="" /></div></td>
                       <td><div>{u.name}</div></td>
                       <td><div>{u.surname}</div></td>
                       <td><div>{u.tg}</div></td>

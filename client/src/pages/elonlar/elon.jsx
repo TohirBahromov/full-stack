@@ -10,7 +10,7 @@ import Loading from '../../utils/loading/loading'
 
 export default function Elon() {
 
-  const {data,loading} = useFetch("http://localhost:8800/api/announcement")
+  const {data,loading} = useFetch("https://classmatesweb.onrender.com/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -100,7 +100,7 @@ export default function Elon() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentElon && `http://localhost:8800/${currentElon?.img}`} alt="" />
+                      <img src={currentElon && `https://classmatesweb.onrender.com/${currentElon?.img}`} alt="" />
                     </div>
                     <p>{currentElon?.text}</p>
                   </div>

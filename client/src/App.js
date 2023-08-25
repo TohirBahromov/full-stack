@@ -19,7 +19,7 @@ function App() {
   const dispatch = useDispatch()
   useEffect(()=>{
     const fetchMyData = async() =>{
-      const {data:myData} = await axios.get("http://localhost:8800/api/auth/profile")
+      const {data:myData} = await axios.get("https://classmatesweb.onrender.com/api/auth/profile")
       dispatch(getUserInfo(myData))
     }
     fetchMyData()

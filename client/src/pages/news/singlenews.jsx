@@ -10,7 +10,7 @@ import Loading from '../../utils/loading/loading'
 
 export default function Singlenews() {
 
-  const {data,loading} = useFetch("http://localhost:8800/api/lenta")
+  const {data,loading} = useFetch("https://classmatesweb.onrender.com/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -101,7 +101,7 @@ export default function Singlenews() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentLenta?.img && `http://localhost:8800/${currentLenta?.img}`} alt="" />
+                      <img src={currentLenta?.img && `https://classmatesweb.onrender.com/${currentLenta?.img}`} alt="" />
                     </div>
                     <p>{currentLenta?.text}</p>
                   </div>

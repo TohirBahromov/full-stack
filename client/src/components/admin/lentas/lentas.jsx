@@ -11,7 +11,7 @@ export default function Lentas() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("http://localhost:8800/api/lenta")
+  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -41,7 +41,7 @@ export default function Lentas() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("http://localhost:8800/api/upload",formdata)
+      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -93,7 +93,7 @@ export default function Lentas() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.post("http://localhost:8800/api/lenta", {
+    const res = await axios.post("https://classmatesweb.onrender.com/api/lenta", {
       title : formData.annTitle,
       text: formData.annText,
       img : imgUrl
@@ -107,7 +107,7 @@ export default function Lentas() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.put("http://localhost:8800/api/lenta", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/lenta", {
       id : formData.annId,
       title : formData.annTitle,
       text: formData.annText,
@@ -120,7 +120,7 @@ export default function Lentas() {
   }
   const handleDelete = async (e) => {
     e.preventDefault()
-    const res = await axios.delete(`http://localhost:8800/api/lenta/${formData.annId}`)
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/lenta/${formData.annId}`)
     dispatch(deleteModalClose())
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
@@ -151,7 +151,7 @@ export default function Lentas() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img && `http://localhost:8800/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img && `https://classmatesweb.onrender.com/${u.img}`} alt="" /></div></td>
                       <td><div>{u.title}</div></td>
                       <td><div>{u.text}</div></td>
                       <td><div>{u.createdAt && changeDate(u.createdAt.toString())}</div></td>

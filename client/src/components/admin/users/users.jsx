@@ -10,7 +10,7 @@ import Loading from "../../../utils/loading/loading"
 export default function Users() {
 
   const dispatch = useDispatch()
-  const {data,loading,reFetch} = useFetch("http://localhost:8800/api/user")
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/user")
   const {deleteModal} = useSelector(state => state.crudModals)
   const userInfo = useSelector(state => state.user)
 
@@ -29,7 +29,7 @@ export default function Users() {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    const res = await axios.delete(`http://localhost:8800/api/user/${userId}`).catch(err => console.log(err))
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/user/${userId}`).catch(err => console.log(err))
     dispatch(deleteModalClose())
     setUserId("")
     reFetch()
@@ -65,7 +65,7 @@ export default function Users() {
                       <td><div>{u.name}</div></td>
                       <td className='img'>
                         <div className="img-u">
-                          <img src={u.img && `http://localhost:8800/${u.img}`} alt="" />
+                          <img src={u.img && `https://classmatesweb.onrender.com/${u.img}`} alt="" />
                         </div>
                       </td>
                       <td><div>{u.email}</div></td>

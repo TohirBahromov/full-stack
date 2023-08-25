@@ -10,7 +10,7 @@ export default function AdminComponent() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("http://localhost:8800/api/admin")
+  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/admin")
 
   const [formData, setFormData] = useState({
     adminId:"",
@@ -64,7 +64,7 @@ export default function AdminComponent() {
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await axios.post("http://localhost:8800/api/admin", {
+    const res = await axios.post("https://classmatesweb.onrender.com/api/admin", {
       signId:formData.adminSignId,
       name:formData.adminname,
       password:formData.adminpassword,
@@ -76,7 +76,7 @@ export default function AdminComponent() {
   }
   const handleUpdate = async (e) => {
     e.preventDefault()
-    const res = await axios.put("http://localhost:8800/api/admin", {
+    const res = await axios.put("https://classmatesweb.onrender.com/api/admin", {
       id:formData.adminId,
       signId:formData.adminSignId,
       name:formData.adminname,
@@ -89,7 +89,7 @@ export default function AdminComponent() {
   }
   const handleDelete = async (e) => {
     e.preventDefault();
-    const res = await axios.delete(`http://localhost:8800/api/admin/${formData.adminId}`).catch(err => console.log(err))
+    const res = await axios.delete(`https://classmatesweb.onrender.com/api/admin/${formData.adminId}`).catch(err => console.log(err))
     dispatch(deleteModalClose())
     setFormData({adminId:"",adminSignId:"",adminname:"",adminpassword:"",adminphone:""})
     reFetch()
