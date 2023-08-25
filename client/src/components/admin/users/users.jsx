@@ -12,7 +12,6 @@ export default function Users() {
   const dispatch = useDispatch()
   const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/user")
   const {deleteModal} = useSelector(state => state.crudModals)
-  const userInfo = useSelector(state => state.user)
 
   const [userId, setUserId] = useState("")
   const newDatas = [...data].reverse()
@@ -33,6 +32,7 @@ export default function Users() {
     dispatch(deleteModalClose())
     setUserId("")
     reFetch()
+    console.log(res)
   }
 
   // console.log(formData);

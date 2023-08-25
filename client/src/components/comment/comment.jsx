@@ -88,6 +88,7 @@ export default function Comment() {
           senderImg: senderInfo?.img,
           text: newComment.comment
         })
+        console.log(res)
         setNewComment({
           commentId:"",
           comment:""
@@ -107,6 +108,7 @@ export default function Comment() {
         id:newComment.commentId,
         text:newComment.comment
       })
+      console.log(res)
       setNewComment({
         commentId:"",
         comment:""
@@ -120,6 +122,7 @@ export default function Comment() {
     const res = await axios.delete(`https://classmatesweb.onrender.com/api/comment/${id}`)
     setIsEditing(null)
     reFetch()
+    console.log(res)
   }
 
   const comment = newCommentsData.map(c => {
@@ -227,7 +230,7 @@ export default function Comment() {
                 </div>
                 <div className="user-socials">
                   {commentedUser.tg && (
-                    <a target='_blank' href={commentedUser.tg && `https://t.me/${commentedUser.tg}`}>
+                    <a target='_blank' rel='noreferrer' href={commentedUser.tg && `https://t.me/${commentedUser.tg}`}>
                       <div className="social tg">
                         <div className="icon">
                           <i className="fa-brands fa-telegram tg"></i>
@@ -237,7 +240,7 @@ export default function Comment() {
                     </a>
                   )}
                   {commentedUser.insta && (
-                    <a target='_blank' href={commentedUser.insta && `https://instagram.com/${commentedUser.insta}`}>
+                    <a target='_blank' rel='noreferrer' href={commentedUser.insta && `https://instagram.com/${commentedUser.insta}`}>
                       <div className="social insta">
                         <div className="icon">
                           <i className="fa-brands fa-square-instagram insta"></i>

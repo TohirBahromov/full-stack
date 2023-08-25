@@ -11,7 +11,7 @@ export default function Classmates() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/classmate")
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/classmate")
 
   const newDatas = [...data].reverse()
   const [formData, setFormData] = useState({
@@ -121,6 +121,7 @@ export default function Classmates() {
       stuwor: formData.classStuwor,
       tel: formData.classphone
     })
+    console.log(res)
     dispatch(createModalClose())
     setFormData({
       classId:"",
@@ -155,6 +156,7 @@ export default function Classmates() {
       tel: formData.classphone
     })
     dispatch(updateModalClose())
+    console.log(res)
     setFormData({
       classId:"",
       className:"",
@@ -174,6 +176,7 @@ export default function Classmates() {
     e.preventDefault()
     const res = await axios.delete(`https://classmatesweb.onrender.com/api/classmate/${formData.classId}`)
     dispatch(deleteModalClose())
+    console.log(res)
     setFormData({
       classId:"",
       className:"",

@@ -1,7 +1,7 @@
 import "../admins/adminComponent.css"
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { createModalOpen, createModalClose, updateModalOpen, updateModalClose, deleteModalOpen, deleteModalClose } from "../../../redux/crudModals"
+import { createModalOpen, createModalClose, deleteModalOpen, deleteModalClose } from "../../../redux/crudModals"
 import axios from "axios"
 import useFetch from '../../../hooks/useFetch'
 import Loading from "../../../utils/loading/loading"
@@ -10,7 +10,7 @@ export default function Advs() {
 
   const dispatch = useDispatch()
   const {createModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/advertisement")
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/advertisement")
 
   const newDatas = [...data].reverse()
   const [formData, setFormData] = useState({
@@ -59,6 +59,7 @@ export default function Advs() {
     const res = await axios.post("https://classmatesweb.onrender.com/api/advertisement", {
       img : imgUrl
     })
+    console.log(res);
     dispatch(createModalClose())
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
@@ -68,6 +69,7 @@ export default function Advs() {
     e.preventDefault()
     const res = await axios.delete(`https://classmatesweb.onrender.com/api/advertisement/${formData.adsId}`)
     dispatch(deleteModalClose())
+    console.log(res)
     setFormData({adsId:""})
     setFile(undefined)
     reFetch()

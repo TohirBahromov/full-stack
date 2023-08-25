@@ -117,16 +117,16 @@ export default function Register() {
             </div>
             <div className="social-medias">
               <ul>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-telegram"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-instagram"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-facebook"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-twitter"></i>
                 </li></a>
               </ul>

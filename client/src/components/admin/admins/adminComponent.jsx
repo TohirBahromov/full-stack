@@ -10,7 +10,7 @@ export default function AdminComponent() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/admin")
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/admin")
 
   const [formData, setFormData] = useState({
     adminId:"",
@@ -70,6 +70,7 @@ export default function AdminComponent() {
       password:formData.adminpassword,
       phone:formData.adminphone
     })
+    console.log(res)
     dispatch(createModalClose())
     setFormData({adminId:"",adminSignId:"",adminname:"",adminpassword:"",adminphone:""})
     reFetch()
@@ -83,6 +84,7 @@ export default function AdminComponent() {
       password:formData.adminpassword,
       phone:formData.adminphone
     })
+    console.log(res)
     dispatch(updateModalClose())
     setFormData({adminId:"",adminSignId:"",adminname:"",adminpassword:"",adminphone:""})
     reFetch()
@@ -93,6 +95,7 @@ export default function AdminComponent() {
     dispatch(deleteModalClose())
     setFormData({adminId:"",adminSignId:"",adminname:"",adminpassword:"",adminphone:""})
     reFetch()
+    console.log(res)
   }
   // console.log(formData);
 

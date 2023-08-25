@@ -10,8 +10,8 @@ import Loading from '../../../utils/loading/loading'
 export default function CommentsAdmin() {
 
   const dispatch = useDispatch()
-  const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/comment")
+  const {deleteModal} = useSelector(state => state.crudModals)
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/comment")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -36,18 +36,6 @@ export default function CommentsAdmin() {
     comtext:"",
     comDate:"",
   })
-  const [file,setFile] = useState(undefined)
-
-  const upload = async () => {
-    try{
-      const formdata = new FormData()
-      formdata.append("file", file)
-      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
-      return res.data
-    }catch(err){
-      console.log(err);
-    }
-  }
 
   const dModalOpen = (id) => {
     setFormData(prev => {
@@ -74,6 +62,7 @@ export default function CommentsAdmin() {
       comtext:"",
       comDate:"",
     })
+    console.log(res)
     setFile(undefined)
     reFetch()
   } 

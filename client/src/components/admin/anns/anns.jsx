@@ -11,7 +11,7 @@ export default function Anns() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,error,reFetch} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -98,6 +98,7 @@ export default function Anns() {
       text: formData.annText,
       img : imgUrl
     })
+    console.log(res)
     dispatch(createModalClose())
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
@@ -114,6 +115,7 @@ export default function Anns() {
       img : imgUrl
     })
     dispatch(updateModalClose())
+    console.log(res)
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
     reFetch()
@@ -122,6 +124,7 @@ export default function Anns() {
     e.preventDefault()
     const res = await axios.delete(`https://classmatesweb.onrender.com/api/announcement/${formData.annId}`)
     dispatch(deleteModalClose())
+    console.log(res)
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
     reFetch()

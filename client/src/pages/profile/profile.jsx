@@ -279,10 +279,10 @@ export default function Profile() {
                   <a href="https://instagram.com/_bakhramovvv__"><li>
                     <i className="fa-brands fa-square-instagram"></i>
                   </li></a>
-                  <a href="#"><li>
+                  <a href="/"><li>
                     <i className="fa-brands fa-square-facebook"></i>
                   </li></a>
-                  <a href="#"><li>
+                  <a href="/"><li>
                     <i className="fa-brands fa-square-twitter"></i>
                   </li></a>
                 </ul>

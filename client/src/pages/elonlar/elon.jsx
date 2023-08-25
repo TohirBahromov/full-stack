@@ -32,9 +32,9 @@ export default function Elon() {
   let location = useLocation()
   const currentAnnId = location.pathname.split("/")[2]
 
-  const currentElon = data?.find(d => d._id == currentAnnId)
+  const currentElon = data?.find(d => d._id === currentAnnId)
   const lastElons = data?.filter(i => {
-    return i._id != currentAnnId
+    return i._id !== currentAnnId
   })
 
   function moreElons(){

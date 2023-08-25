@@ -57,7 +57,7 @@ export default function Admin() {
 
   return (
     <>
-      <div className={`wrapper-admin ${createModal && "wrapper-backdrop" || updateModal && "wrapper-backdrop" || deleteModal && "wrapper-backdrop" || isResp && "wrapper-backdrop"}`}>
+      <div className={`wrapper-admin ${(createModal && "wrapper-backdrop") || (updateModal && "wrapper-backdrop") || (deleteModal && "wrapper-backdrop") || (isResp && "wrapper-backdrop")}`}>
         <div className={`sidebar ${isClosed ? 'close' : ""} ${isResp && 'resp'}`}>
           <div className="sidebar-head">
             <div className="name-brand">
@@ -77,7 +77,7 @@ export default function Admin() {
               {admindashlinks.map(a => {
                 return(
                   <li className={active === a.id ? 'active' : ""} key={a.id} onClick={() => handleActive(a.id)}>
-                    <a>
+                    <a href=''>
                       <div className="icon">
                         <i className={`fa-solid ${a.icon}`}></i>
                       </div>

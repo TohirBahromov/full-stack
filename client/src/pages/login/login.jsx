@@ -72,7 +72,7 @@ export default function Login() {
         <div className="register--header">
           <Link to="/">
             <div className="logo-line-register">
-              <img src={logo} width="117" height="48" />
+              <img alt='' src={logo} width="117" height="48" />
             </div>
           </Link>
           <div className="go-singIn">
@@ -108,20 +108,20 @@ export default function Login() {
         <div className="container">
           <div className="line">
             <div className="text">
-              Ushbu sayt <a target='_blank' href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
+              Ushbu sayt <a target='_blank' rel='noreferrer' href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
             </div>
             <div className="social-medias">
               <ul>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-telegram"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-instagram"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-facebook"></i>
                 </li></a>
-                <a href="#"><li>
+                <a href="/"><li>
                   <i className="fa-brands fa-square-twitter"></i>
                 </li></a>
               </ul>
