@@ -73,7 +73,7 @@ export default function Register() {
         <div className="register--header">
           <Link to="/">
             <div className="logo-line-register">
-              <img src={logo} width="117" height="48" />
+              <img src={logo} alt='' width="117" height="48" />
             </div>
           </Link>
           <div className="go-singIn">
@@ -113,7 +113,7 @@ export default function Register() {
         <div className="container">
           <div className="line">
             <div className="text">
-              Ushbu sayt <a target='_blank' href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
+              Ushbu sayt <a target='_blank' rel="noreferrer" href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
             </div>
             <div className="social-medias">
               <ul>

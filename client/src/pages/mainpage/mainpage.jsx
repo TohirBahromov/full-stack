@@ -134,12 +134,12 @@ export default function Mainpage() {
           <h1 className='surname_f'>{f.surname}</h1>
           <div className="social-medias">
             {f.tg && (
-              <a target='_blank' href={f.tg && `https://t.me/${f.tg}`} className='tg'>
+              <a target='_blank' rel='noreferrer' href={f.tg && `https://t.me/${f.tg}`} className='tg'>
                 <i className="fa-brands fa-telegram"></i>
               </a>
             )}
             {f.insta && (
-              <a target='_blank' href={f.insta && `https://instagram.com/${f.insta}`} className='insta'>
+              <a target='_blank' rel='noreferrer' href={f.insta && `https://instagram.com/${f.insta}`} className='insta'>
                 <i className="fa-brands fa-square-instagram"></i>
               </a>
             )}
@@ -162,7 +162,7 @@ export default function Mainpage() {
 
   return (
     <>
-      <div className={`wrapper ${isShown && "wrapper-blur" || responsive && "wrapper-blur" || commentedModalIsShown && "wrapper-blur"}`}>
+      <div className={`wrapper ${(isShown && "wrapper-blur") || (responsive && "wrapper-blur") || (commentedModalIsShown && "wrapper-blur")}`}>
           <>
             <header>
               <div className="container">

@@ -54,6 +54,7 @@ export default function Profile() {
       id:myData?.userId,
       img:imgUrl
     })
+    console.log(res)
     reFetch()
     setFile(undefined)
   }
@@ -100,13 +101,13 @@ export default function Profile() {
 
   return (
     <>
-    <div className={`wrapper-profile ${isShownBio && `wrapper-backdrop` || isShownNick && `wrapper-backdrop` || isShownTg && `wrapper-backdrop` || isShownInsta && `wrapper-backdrop`}`}>
+    <div className={`wrapper-profile ${(isShownBio && `wrapper-backdrop`) || (isShownNick && `wrapper-backdrop`) || (isShownTg && `wrapper-backdrop`) || (isShownInsta && `wrapper-backdrop`)}`}>
       <header>
         <div className="container">
           <div className="register--header">
             <Link to="/">
               <div className="logo-line-register">
-                <img src={logo} width="117" height="48" />
+                <img src={logo} alt='' width="117" height="48" />
               </div>
             </Link>
             <div className="go-singIn">
@@ -268,14 +269,14 @@ export default function Profile() {
           <div className="container">
             <div className="line">
               <div className="text">
-                Ushbu sayt <a target='_blank' href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
+                Ushbu sayt <a target='_blank' rel='noreferrer' href="https://instagram.com/_bakhramovvv__">_bakhramovvv__</a> tomonidan yaratilgan bo'lib, saytdagi barcha ma'lumotlar uning sinfi va sinfdoshlariga tegishlidir.Asosiy maqsad sinfdoshlar haqidagi barcha yangiliklarni bir birlariga yetqazib turishdir.Saytga faqat adminlar yangilik yubora oladilar.Biror yangilikga ega bo'lsangiz adminlarga bog'laning!
               </div>
               <div className="social-medias">
                 <ul>
-                  <a href="#"><li>
+                  <a href="https://t.me/pinpointz"><li>
                     <i className="fa-brands fa-telegram"></i>
                   </li></a>
-                  <a href="#"><li>
+                  <a href="https://instagram.com/_bakhramovvv__"><li>
                     <i className="fa-brands fa-square-instagram"></i>
                   </li></a>
                   <a href="#"><li>

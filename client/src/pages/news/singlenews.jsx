@@ -35,7 +35,7 @@ export default function Singlenews() {
 
   const currentLenta = data?.find(d => d._id === currentAnnId)
   const lastNews = data?.filter(i => {
-    return i._id != currentAnnId
+    return i._id !== currentAnnId
   })
 
   function moreNews(){
