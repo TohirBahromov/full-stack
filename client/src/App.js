@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 import axios from "axios";
 import Mainpage from "./pages/mainpage/mainpage";
 import Register from "./pages/register/register";
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Mainpage />}/>
           <Route path="/register" element={<Register />} />
@@ -38,7 +38,7 @@ function App() {
           <Route path="/admin/dashboard" element={<Admin />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
