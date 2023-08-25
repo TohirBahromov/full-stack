@@ -22,7 +22,7 @@ function App() {
       dispatch(getUserInfo(myData))
     }
     fetchMyData()
-  },[])
+  },[dispatch])
 
   return (
     <>
