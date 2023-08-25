@@ -9,7 +9,7 @@ import useFetch from '../../hooks/useFetch'
 
 export default function Singlenews() {
 
-  const {data,loading} = useFetch("https://classmatesweb.onrender.com/api/lenta")
+  const {data} = useFetch("https://classmatesweb.onrender.com/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`

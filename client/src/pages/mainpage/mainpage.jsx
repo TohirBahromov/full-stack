@@ -13,7 +13,7 @@ import useFetch from '../../hooks/useFetch';
 
 export default function Mainpage() {
 
-  const {data:annsData,loading} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data:annsData} = useFetch("https://classmatesweb.onrender.com/api/announcement")
   const {data:lentaData} = useFetch("https://classmatesweb.onrender.com/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
