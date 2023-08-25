@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/index.html">
         <Routes>
           <Route path="/" element={<Mainpage />}/>
           <Route path="/register" element={<Register />} />
