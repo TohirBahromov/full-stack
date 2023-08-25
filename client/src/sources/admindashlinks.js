@@ -1,4 +1,4 @@
-export const Admindashlinks = [
+export default [
   {
     id:'1',
     icon:"fa-house",
@@ -40,5 +40,3 @@ export const Admindashlinks = [
     model:"Comments"
   }
 ]
-
-export default admindashlinks

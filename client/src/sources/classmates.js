@@ -22,7 +22,7 @@ import otash from "../images/class/otash.jpg"
 
 
 
-export default classmates = [
+export default [
   {
     id:"1",
     img:`${Abdulaziz}`,
