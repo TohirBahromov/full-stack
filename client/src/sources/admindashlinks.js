@@ -1,4 +1,4 @@
-export default [
+export default admindashlinks = [
   {
     id:'1',
     icon:"fa-house",
