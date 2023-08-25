@@ -43,5 +43,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "proxy": {
+    "/search" : {
+      "target" : "https://www.google.com",
+      "changeOrigin" : true
+    },
+    "/jobs" : {
+      "target" : "https://classmatesweb.onrender.com",
+      "changeOrigin" : true
+    }
   }
 }
