@@ -63,7 +63,6 @@ export default function CommentsAdmin() {
       comDate:"",
     })
     console.log(res)
-    setFile(undefined)
     reFetch()
   } 
 
