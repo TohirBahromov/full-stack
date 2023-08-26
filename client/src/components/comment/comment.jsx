@@ -14,12 +14,10 @@ export default function Comment() {
   const {data:myData} = useFetch("https://classmatesweb.onrender.com/api/auth/profile")
   const {data:adminsData} = useFetch("https://classmatesweb.onrender.com/api/admin")
   // const isAdmin = adminsData?.find(d => d.signId === (commentsData?.forEach(e => {return e.sender})))
-  const isAdmin = commentsData?.forEach(e => {return adminsData?.find(d => d.signId === e.sender)})
-  console.log(isAdmin);
-  const eachCommentSenders = commentsData?.forEach(e => {return e.sender})
+  const eachCommentSenders = commentsData?.filter(e => {return e.sender})
   console.log(eachCommentSenders);
-  const isAdmin2 = adminsData?.find(d => d.signId === commentsData?.forEach(e => {return e.sender}))
-  console.log(isAdmin2);
+  const isAdmin = adminsData?.find(d => d.signId === commentsData?.filter(e => {return e.sender}))
+  console.log(isAdmin);
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
