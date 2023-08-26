@@ -29,7 +29,7 @@ export const register = async (req,res) => {
         if(err){
           res.json("Xatolik yuz berdi")
         }else{
-          res.cookie("token",token).status(200).json("success")
+          res.cookie("token",token,{sameSite:"none",secure:true}).status(200).json("success")
         }
       })
     }
@@ -49,7 +49,7 @@ export const login = async (req,res) => {
     }else{
       jwt.sign({userId:foundUser._id, userName:foundUser.name},jwtSecret,(err,token)=>{
         if(err) res.json("Xatolik yuz berdi")
-        res.cookie("token",token).json("success")
+        res.cookie("token",token,{sameSite:"none", secure: true}).json("success")
       })
     }
   }
