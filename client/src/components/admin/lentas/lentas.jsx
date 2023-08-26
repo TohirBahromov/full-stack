@@ -98,7 +98,6 @@ export default function Lentas() {
       text: formData.annText,
       img : imgUrl
     })
-    console.log(res)
     dispatch(createModalClose())
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
@@ -114,7 +113,6 @@ export default function Lentas() {
       text: formData.annText,
       img : imgUrl
     })
-    console.log(res)
     dispatch(updateModalClose())
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
@@ -127,7 +125,6 @@ export default function Lentas() {
     setFormData({annId:"",annTitle:"",annText:""})
     setFile(undefined)
     reFetch()
-    console.log(res)
   } 
 
   // console.log(formData);
