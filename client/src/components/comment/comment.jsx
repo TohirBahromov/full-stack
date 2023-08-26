@@ -18,6 +18,8 @@ export default function Comment() {
   console.log(eachCommentSenders);
   const isAdmin = adminsData?.find(d => d.signId === commentsData?.filter(e => {return e.sender}))
   console.log(isAdmin);
+  const isAdmin2 = adminsData?.find(a => a.signId === commentsData?.map(c => {return c.sender}))
+  console.log(isAdmin2);
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
