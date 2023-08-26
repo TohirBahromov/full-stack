@@ -9,7 +9,6 @@ export const createLenta = async (req,res) => {
       img,
       text
     })
-    console.log(`${hours} / ${date}`);
     const Lenta = await newLenta.save();
     res.json(Lenta)
   }catch(err){
