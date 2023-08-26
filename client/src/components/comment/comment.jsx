@@ -14,12 +14,6 @@ export default function Comment() {
   const {data:myData} = useFetch("https://classmatesweb.onrender.com/api/auth/profile")
   const {data:adminsData} = useFetch("https://classmatesweb.onrender.com/api/admin")
   // const isAdmin = adminsData?.find(d => d.signId === (commentsData?.forEach(e => {return e.sender})))
-  const eachCommentSenders = commentsData?.filter(e => {return e.sender})
-  console.log(eachCommentSenders);
-  const isAdmin = adminsData?.find(d => d.signId === commentsData?.filter(e => {return e.sender}))
-  console.log(isAdmin);
-  const isAdmin2 = adminsData?.find(a => a.signId === commentsData?.map(c => {return c.sender}))
-  console.log(isAdmin2);
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -140,7 +134,7 @@ export default function Comment() {
         </div>
         <div className="text-user">
           <p>{c.text}</p>
-          {isAdmin && (
+          {adminsData?.find(a => a.signId === c.sender) && (
             <div className="img-galochka">
               <img src={galochka} alt="" />
             </div>
@@ -223,7 +217,7 @@ export default function Comment() {
                   </div>
                   <div className="username">
                     <p>{commentedUser.username}</p>
-                    {isAdmin && (
+                    {adminsData?.find(a => a.signId === commentedUser.sender) && (
                       <p className="admin-hashtag">#admin</p>
                     )}
                   </div>
