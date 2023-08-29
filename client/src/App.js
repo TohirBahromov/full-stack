@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <HashRouter>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Mainpage />}/>
             <Route path="/register" element={<Register />} />
