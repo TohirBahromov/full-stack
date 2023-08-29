@@ -60,6 +60,6 @@ app.use("/api/auth", authRoute)
 
 
 
-app.listen(8800,()=>{
+app.listen(8800,"0.0.0.0",()=>{
   console.log("Server is listening on port 8800");
 })
