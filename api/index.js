@@ -14,6 +14,8 @@ import multer from "multer"
 import path from "path"
 const app = express()
 
+const port = 8800
+
 // connection with database
 mongoose.connect(process.env.MONGO_DB, {
   useNewUrlParser : true,
@@ -60,6 +62,6 @@ app.use("/api/auth", authRoute)
 
 
 
-app.listen(8800,"0.0.0.0",()=>{
+app.listen(port,"0.0.0.0",()=>{
   console.log("Server is listening on port 8800");
 })
