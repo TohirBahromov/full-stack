@@ -12,9 +12,11 @@ import commentRoute from "./routes/comments.js"
 import authRoute from "./routes/auth.js"
 import multer from "multer"
 import path from "path"
+import dotenv from "dotenv"
+dotenv.config()
 const app = express()
 
-const port = 8800
+const port = process.env.PORT || 4000
 
 // connection with database
 mongoose.connect(process.env.MONGO_DB, {
