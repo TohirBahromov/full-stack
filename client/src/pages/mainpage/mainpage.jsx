@@ -192,7 +192,7 @@ export default function Mainpage() {
                           <Link key={news._id} to={`/announcements/${news._id}`}>
                             <div className="col mb-3 g-0 d-flex">
                               <div className="img-content">
-                                <img src={news.img && `https://class11a.up.railway.app//${news.img}`} alt="" />
+                                <img src={news.img && `https://class11a.up.railway.app/${news.img}`} alt="" />
                               </div>
                               <div className="text-content p-3">
                                 <span className="date"><p>{changeDate(news.createdAt.toString())}</p></span>
