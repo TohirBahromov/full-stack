@@ -9,7 +9,7 @@ import useFetch from '../../hooks/useFetch'
 
 export default function Singlenews() {
 
-  const {data} = useFetch("https://classmatesweb.onrender.com/api/lenta")
+  const {data} = useFetch("/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -100,7 +100,7 @@ export default function Singlenews() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentLenta?.img && `https://classmatesweb.onrender.com/${currentLenta?.img}`} alt="" />
+                      <img src={currentLenta?.img && `https://class11a.up.railway.app/${currentLenta?.img}`} alt="" />
                     </div>
                     <p>{currentLenta?.text}</p>
                   </div>

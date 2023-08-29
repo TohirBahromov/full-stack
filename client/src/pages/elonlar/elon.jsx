@@ -9,7 +9,7 @@ import useFetch from '../../hooks/useFetch'
 
 export default function Elon() {
 
-  const {data} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data} = useFetch("/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -99,7 +99,7 @@ export default function Elon() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentElon && `https://classmatesweb.onrender.com/${currentElon?.img}`} alt="" />
+                      <img src={currentElon && `https://class11a.up.railway.app/${currentElon?.img}`} alt="" />
                     </div>
                     <p>{currentElon?.text}</p>
                   </div>

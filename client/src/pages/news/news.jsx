@@ -9,8 +9,8 @@ import useFetch from '../../hooks/useFetch'
 
 export default function News() {
 
-  const {data} = useFetch("https://classmatesweb.onrender.com/api/lenta")
-  const {data:annsData} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data} = useFetch("/api/lenta")
+  const {data:annsData} = useFetch("/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -40,7 +40,7 @@ export default function News() {
       <Link to={`/news/${n._id}`} key={n._id} className='ref_news'>
         <div className="news-block">
           <div className="img">
-            <img src={n.img && `https://classmatesweb.onrender.com/${n.img}`} alt="" />
+            <img src={n.img && `https://class11a.up.railway.app/${n.img}`} alt="" />
           </div>
           <div className="text-content_res">
             <div className="date"><p>{n.createdAt && changeDate(n.createdAt.toString())}</p></div>

@@ -4,10 +4,10 @@ import useFetch from '../../../hooks/useFetch'
 
 export default function Home() {
 
-  const {data:users} = useFetch("https://classmatesweb.onrender.com/api/user")
-  const {data:comments} = useFetch("https://classmatesweb.onrender.com/api/comment")
-  const {data:ann} = useFetch("https://classmatesweb.onrender.com/api/announcement")
-  const {data:lenta} = useFetch("https://classmatesweb.onrender.com/api/lenta")
+  const {data:users} = useFetch("/api/user")
+  const {data:comments} = useFetch("/api/comment")
+  const {data:ann} = useFetch("/api/announcement")
+  const {data:lenta} = useFetch("/api/lenta")
 
   return (
     <>

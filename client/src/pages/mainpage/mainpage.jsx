@@ -13,8 +13,8 @@ import classmates from '../../sources/classmates';
 
 export default function Mainpage() {
 
-  const {data:annsData} = useFetch("https://classmatesweb.onrender.com/api/announcement")
-  const {data:lentaData} = useFetch("https://classmatesweb.onrender.com/api/lenta")
+  const {data:annsData} = useFetch("/api/announcement")
+  const {data:lentaData} = useFetch("/api/lenta")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -177,7 +177,7 @@ export default function Mainpage() {
                     <Link key={lastSevenAdvsReverse[0]?._id} to={`/announcements/${lastSevenAdvsReverse[0]?._id}`}>
                       <div className="row main_first">
                         <div className="col main-news_img g-0">
-                          <img src={lastSevenAdvsReverse[0]?.img && `https://classmatesweb.onrender.com/${lastSevenAdvsReverse[0]?.img}`} alt="" />
+                          <img src={lastSevenAdvsReverse[0]?.img && `https://class11a.up.railway.app/${lastSevenAdvsReverse[0]?.img}`} alt="" />
                         </div>
                         <div className="col main-news_content g-0 p-3">
                           <span className='date'><p>{lastSevenAdvsReverse[0]?.createdAt && changeDate(lastSevenAdvsReverse[0]?.createdAt.toString())}</p></span>
@@ -192,7 +192,7 @@ export default function Mainpage() {
                           <Link key={news._id} to={`/announcements/${news._id}`}>
                             <div className="col mb-3 g-0 d-flex">
                               <div className="img-content">
-                                <img src={news.img && `https://classmatesweb.onrender.com/${news.img}`} alt="" />
+                                <img src={news.img && `https://class11a.up.railway.app//${news.img}`} alt="" />
                               </div>
                               <div className="text-content p-3">
                                 <span className="date"><p>{changeDate(news.createdAt.toString())}</p></span>
@@ -220,7 +220,7 @@ export default function Mainpage() {
                             </div>
                             <div className="content_">
                               <div className="img">
-                                <img src={l.img && `https://classmatesweb.onrender.com/${l.img}`} alt="" />
+                                <img src={l.img && `https://class11a.up.railway.app//${l.img}`} alt="" />
                               </div>
                               <div className='txt'>{l.title}</div>
                             </div>

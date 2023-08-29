@@ -11,7 +11,7 @@ export default function Anns() {
 
   const dispatch = useDispatch()
   const {createModal,updateModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/announcement")
+  const {data,loading,reFetch} = useFetch("/api/announcement")
   const setTimeAttrs = (hours) => {
     if(hours - 5 < 5){
       return `0${hours}`
@@ -41,7 +41,7 @@ export default function Anns() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
+      const res = await axios.post("/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -93,7 +93,7 @@ export default function Anns() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.post("https://classmatesweb.onrender.com/api/announcement", {
+    const res = await axios.post("/api/announcement", {
       title : formData.annTitle,
       text: formData.annText,
       img : imgUrl
@@ -108,7 +108,7 @@ export default function Anns() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.put("https://classmatesweb.onrender.com/api/announcement", {
+    const res = await axios.put("/api/announcement", {
       id : formData.annId,
       title : formData.annTitle,
       text: formData.annText,
@@ -122,7 +122,7 @@ export default function Anns() {
   }
   const handleDelete = async (e) => {
     e.preventDefault()
-    const res = await axios.delete(`https://classmatesweb.onrender.com/api/announcement/${formData.annId}`)
+    const res = await axios.delete(`/api/announcement/${formData.annId}`)
     dispatch(deleteModalClose())
     console.log(res)
     setFormData({annId:"",annTitle:"",annText:""})
@@ -152,7 +152,7 @@ export default function Anns() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img &&`https://classmatesweb.onrender.com/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img &&`https://class11a.up.railway.app/${u.img}`} alt="" /></div></td>
                       <td><div>{u.title}</div></td>
                       <td><div>{u.text}</div></td>
                       <td><div>{u.createdAt && changeDate(u.createdAt.toString())}</div></td>

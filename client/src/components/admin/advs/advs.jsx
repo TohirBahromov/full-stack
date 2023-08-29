@@ -10,7 +10,7 @@ export default function Advs() {
 
   const dispatch = useDispatch()
   const {createModal,deleteModal} = useSelector(state => state.crudModals)
-  const {data,loading,reFetch} = useFetch("https://classmatesweb.onrender.com/api/advertisement")
+  const {data,loading,reFetch} = useFetch("/api/advertisement")
 
   const newDatas = [...data].reverse()
   const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ export default function Advs() {
     try{
       const formdata = new FormData()
       formdata.append("file", file)
-      const res = await axios.post("https://classmatesweb.onrender.com/api/upload",formdata)
+      const res = await axios.post("/api/upload",formdata)
       return res.data
     }catch(err){
       console.log(err);
@@ -56,7 +56,7 @@ export default function Advs() {
     e.preventDefault()
     let imgUrl = "";
     if(file) imgUrl = await upload()
-    const res = await axios.post("https://classmatesweb.onrender.com/api/advertisement", {
+    const res = await axios.post("/api/advertisement", {
       img : imgUrl
     })
     console.log(res);
@@ -67,7 +67,7 @@ export default function Advs() {
   }
   const handleDelete = async (e) => {
     e.preventDefault()
-    const res = await axios.delete(`https://classmatesweb.onrender.com/api/advertisement/${formData.adsId}`)
+    const res = await axios.delete(`/api/advertisement/${formData.adsId}`)
     dispatch(deleteModalClose())
     console.log(res)
     setFormData({adsId:""})
@@ -96,7 +96,7 @@ export default function Advs() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img && `https://classmatesweb.onrender.com/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img && `https://class11a.up.railway.app/${u.img}`} alt="" /></div></td>
                       <td className="action">
                         <div className="icons">
                           <div className="icon delete" onClick={() => dModalOpen(u._id)}>

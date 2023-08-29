@@ -45,7 +45,7 @@ export default function Login() {
     if(formData.username === "" || formData.password === ""){
       alert("Inputlardan biri kiritilmagan");
     }else{
-      const res = await axios.post("https://classmatesweb.onrender.com/api/auth/login", {
+      const res = await axios.post("/api/auth/login", {
         name:formData.username,
         password:formData.password
       })

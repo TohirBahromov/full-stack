@@ -15,10 +15,11 @@ import { getUserInfo } from "./redux/userSlice";
 function App() {
 
   axios.defaults.withCredentials = true;
+  axios.defaults.baseURL = "https://class11a.up.railway.app"
   const dispatch = useDispatch()
   useEffect(()=>{
     const fetchMyData = async() =>{
-      const {data:myData} = await axios.get("https://classmatesweb.onrender.com/api/auth/profile")
+      const {data:myData} = await axios.get("/api/auth/profile")
       dispatch(getUserInfo(myData))
     }
     fetchMyData()

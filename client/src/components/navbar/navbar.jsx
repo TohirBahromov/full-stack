@@ -11,7 +11,7 @@ export default function Navbar() {
   const dispatch = useDispatch()
   const {responsive} = useSelector(state => state.responsive)
   const myData = useSelector(state => state.user)
-  const {data:adminDatas} = useFetch("https://classmatesweb.onrender.com/api/admin")
+  const {data:adminDatas} = useFetch("/api/admin")
 
   function handleModal(){
     dispatch(setModal())
