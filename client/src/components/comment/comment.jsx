@@ -137,6 +137,9 @@ export default function Comment() {
           )}
         </div>
         <div className="text-user">
+          <span className="username-com">
+            {usersData?.find(u => u._id === c.sender)?.name}
+          </span>
           <p>{c.text}</p>
         </div>
         {c.sender === myData.userId && (

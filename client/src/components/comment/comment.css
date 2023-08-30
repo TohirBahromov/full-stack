@@ -63,8 +63,13 @@
 }
 .comment .text-user{
   width: calc(100% - 70px);
-  align-items: center;
+  /* align-items: center; */
   display: flex;
+  flex-direction: column;
+}
+.comment .text-user .username-com{
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 .comment .text-user p{
   font-size: 15px;
