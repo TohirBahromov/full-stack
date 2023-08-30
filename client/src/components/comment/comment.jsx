@@ -130,14 +130,14 @@ export default function Comment() {
       <div className="user">
         <div className="img-user" onClick={() => selectCommentedUser(c.sender)}>
           <img src={usersData?.find(d => d._id === c.sender)?.img && `https://class11a.up.railway.app/${usersData?.find(d => d._id === c.sender)?.img}`} alt="" />
-        </div>
-        <div className="text-user">
-          <p>{c.text}</p>
           {adminsData?.find(a => a.signId === c.sender) && (
             <div className="img-galochka">
               <img src={galochka} alt="" />
             </div>
           )}
+        </div>
+        <div className="text-user">
+          <p>{c.text}</p>
         </div>
         {c.sender === myData.userId && (
           <div className="editing-comment" onClick={()=> editComment(c._id)}>

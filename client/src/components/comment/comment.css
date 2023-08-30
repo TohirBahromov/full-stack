@@ -59,6 +59,7 @@
   height: 35px;
   margin-right: 10px;
   cursor: pointer;
+  position: relative;
 }
 .comment .text-user{
   width: calc(100% - 70px);
@@ -233,11 +234,14 @@
   margin-left: 10px;
 }
 .img-galochka{
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
 }
 .img-galochka img{
   width: 90%;
