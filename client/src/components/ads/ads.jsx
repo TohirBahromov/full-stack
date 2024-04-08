@@ -10,7 +10,7 @@ export default function Ads() {
   return (
     <>
       <div className="adv__">
-        <img src={`https://class11a.up.railway.app/${data?.[randomAds]?.img}`} alt="" />
+        <img src={`https://class11a.onrender.com//${data?.[randomAds]?.img}`} alt="" />
       </div>
     </>
   )

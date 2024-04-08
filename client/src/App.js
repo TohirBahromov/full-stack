@@ -15,7 +15,7 @@ import { getUserInfo } from "./redux/userSlice";
 function App() {
 
   axios.defaults.withCredentials = true;
-  axios.defaults.baseURL = "https://class11a.up.railway.app"
+  axios.defaults.baseURL = "https://class11a.onrender.com"
   const dispatch = useDispatch()
   useEffect(()=>{
     const fetchMyData = async() =>{
