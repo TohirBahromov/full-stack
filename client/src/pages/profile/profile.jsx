@@ -26,7 +26,7 @@ export default function Profile() {
 
   const [isShownNick,setIsShownnick] = useState(false)
   const [isShownBio,setIsShownBio] = useState(false)
-  const [isShownTg, setIsShownTg] = useState(false)
+  const [isShownTg, setIsShownTg] = useState(false) 
   const [isShownInsta, setIsShownInsta] = useState(false)
   const [newNickname, setNewNickname] = useState("")
   const [newBio, setNewBio] = useState("")
@@ -123,7 +123,7 @@ export default function Profile() {
               <div className="account-setting_wind">
                 <div className="logo-profile_b">
                   <div className="logo">
-                    <img src={myInfo?.img && `https://class11a.up.railway.app/${myInfo.img}`} alt="" />
+                    <img src={myInfo?.img && `https://class11a.onrender.com/${myInfo.img}`} alt="" />
                     {file && (
                     <div className="editing-svg_prof" onClick={submitImg}>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

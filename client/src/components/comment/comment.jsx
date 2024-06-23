@@ -129,7 +129,7 @@ export default function Comment() {
       <div className="comment" key={c._id}>
       <div className="user">
         <div className="img-user" onClick={() => selectCommentedUser(c.sender)}>
-          <img src={usersData?.find(d => d._id === c.sender)?.img && `https://class11a.up.railway.app/${usersData?.find(d => d._id === c.sender)?.img}`} alt="" />
+          <img src={usersData?.find(d => d._id === c.sender)?.img && `https://class11a.onrender.com/${usersData?.find(d => d._id === c.sender)?.img}`} alt="" />
           {adminsData?.find(a => a.signId === c.sender) && (
             <div className="img-galochka">
               <img src={galochka} alt="" />
@@ -215,7 +215,7 @@ export default function Comment() {
               <div className="wrapper-upm">
                 <div className="header">
                   <div className="img">
-                    <img src={commentedUser.img && `https://class11a.up.railway.app/${commentedUser.img}`} alt="" />
+                    <img src={commentedUser.img && `https://class11a.onrender.com/${commentedUser.img}`} alt="" />
                   </div>
                   <div className="username">
                     <p>{commentedUser.username}</p>

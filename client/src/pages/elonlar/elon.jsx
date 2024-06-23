@@ -99,7 +99,7 @@ export default function Elon() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentElon && `https://class11a.up.railway.app/${currentElon?.img}`} alt="" />
+                      <img src={currentElon && `https://class11a.onrender.com/${currentElon?.img}`} alt="" />
                     </div>
                     <p>{currentElon?.text}</p>
                   </div>

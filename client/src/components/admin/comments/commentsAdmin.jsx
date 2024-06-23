@@ -88,7 +88,7 @@ export default function CommentsAdmin() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.senderImg && `https://class11a.up.railway.app/${u.senderImg}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.senderImg && `https://class11a.onrender.com/${u.senderImg}`} alt="" /></div></td>
                       <td><div>{u.sender}</div></td>
                       <td><div>{u.text}</div></td>
                       <td><div>{u.createdAt && changeDate(u.createdAt.toString())}</div></td>

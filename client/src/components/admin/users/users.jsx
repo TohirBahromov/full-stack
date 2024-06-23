@@ -65,7 +65,7 @@ export default function Users() {
                       <td><div>{u.name}</div></td>
                       <td className='img'>
                         <div className="img-u">
-                          <img src={u.img && `https://class11a.up.railway.app/${u.img}`} alt="" />
+                          <img src={u.img && `https://class11a.onrender.com/${u.img}`} alt="" />
                         </div>
                       </td>
                       <td><div>{u.email}</div></td>

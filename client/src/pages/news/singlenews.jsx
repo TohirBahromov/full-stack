@@ -100,7 +100,7 @@ export default function Singlenews() {
                   </div>
                   <div className="content_adv">
                     <div className="img">
-                      <img src={currentLenta?.img && `https://class11a.up.railway.app/${currentLenta?.img}`} alt="" />
+                      <img src={currentLenta?.img && `https://class11a.onrender.com/${currentLenta?.img}`} alt="" />
                     </div>
                     <p>{currentLenta?.text}</p>
                   </div>

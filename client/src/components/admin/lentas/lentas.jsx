@@ -151,7 +151,7 @@ export default function Lentas() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img && `https://class11a.up.railway.app/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img && `https://class11a.onrender.com/${u.img}`} alt="" /></div></td>
                       <td><div>{u.title}</div></td>
                       <td><div>{u.text}</div></td>
                       <td><div>{u.createdAt && changeDate(u.createdAt.toString())}</div></td>

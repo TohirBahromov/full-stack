@@ -96,7 +96,7 @@ export default function Advs() {
                   return(
                     <tr key={u._id}>
                       <td><div>{u._id}</div></td>
-                      <td className='img'><div className="img-u"><img src={u.img && `https://class11a.up.railway.app/${u.img}`} alt="" /></div></td>
+                      <td className='img'><div className="img-u"><img src={u.img && `https://class11a.onrender.com/${u.img}`} alt="" /></div></td>
                       <td className="action">
                         <div className="icons">
                           <div className="icon delete" onClick={() => dModalOpen(u._id)}>

@@ -1,4 +1,4 @@
-import { React, useState, useRef,useEffect } from 'react';
+import { React, useState,useEffect } from 'react';
 import "../mainpage/mainpage.css";
 import "../mainpage/mainpageRes.css";
 import Footer from '../../components/footer/footer';
@@ -6,10 +6,8 @@ import Navbar from '../../components/navbar/navbar';
 import Ads from '../../components/ads/ads';
 import Comment from '../../components/comment/comment';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
-import { selectClassmate, unselectClassmate } from '../../redux/classmatesSlice';
+import { useSelector } from "react-redux";
 import useFetch from '../../hooks/useFetch';
-import classmates from '../../sources/classmates';
 
 export default function Mainpage() {
 
@@ -32,9 +30,6 @@ export default function Mainpage() {
     return `${uzbHours} / ${date}`
   }
 
-  const widthElement = useRef(null)
-  const widthParent = useRef(null)
-  const [lastNumClassmate,setLastNumClassmate] = useState(5)
   const [windowDimension, setWindowDimension] = useState({
     windowWidth : window.innerWidth,
     windowHeight : window.innerHeight
@@ -52,11 +47,9 @@ export default function Mainpage() {
     }
   },[windowDimension])
   
-  const dispatch = useDispatch()
   const {responsive} = useSelector(state => state.responsive)
   const {isShown:commentedModalIsShown} = useSelector(state => state.commentUser)
 
-  const lastClassmates = classmates.slice(0,lastNumClassmate)
   const lastFiveLenta = lentaData?.slice(-5)
   const lastFiveLentaReverse = lastFiveLenta?.reverse()
   const lastSevenAdvs = annsData?.slice(-7)
@@ -65,91 +58,7 @@ export default function Mainpage() {
     return index >= 1;
   })
   // Testing
-  const [widthBox, setWidthBox] = useState(0)
-  useEffect(()=>{
-    setWidthBox(widthElement.current?.clientWidth)
-  },[])
-  const [slide, setSlide] = useState(0)
-  const {isShown,...selectedClassmate} = useSelector(state => state.classmate)
-
-  const widthCard = widthBox + 19
-  const widthCarouselFloat = widthCard * (lastClassmates.length + 1)
-  function detectNumberCards(){
-    if(windowDimension.windowWidth > 1200){
-      return 5
-    }else if(windowDimension.windowWidth > 990){
-      return 4
-    }else if(windowDimension.windowWidth > 765){
-      return 3
-    }else{
-      return 2
-    }
-  }
-  const lastPointCarousel = widthCarouselFloat - (widthCard * detectNumberCards())
-  const transformation = {
-    transform: `translate3d(${slide}px, 0px, 0px)`
-  }
-  const unmovingCarousel = {
-    backgroundColor : "#b8b7b7"
-  }
-  const movingCarousel = {
-    backgroundColor : "#fff"
-  }
-
-
-  function slideRight(){
-    if(slide === -lastPointCarousel){
-      return
-    }else{
-      setSlide(prevSlide => prevSlide - widthCard)
-    }
-  }
-  function slideLeft(){
-    if(slide === 0){
-      return
-    }else{
-      setSlide(prevSlide => prevSlide + widthCard)
-    }
-  }
-  function selectUser(name,img,surname,birthday,height,status,stuwor,tel){
-    dispatch(selectClassmate({name,img,surname,birthday,height,status,stuwor,tel}))
-    document.querySelector("body").style.overflow = "hidden"
-  }
-  function unselectUser(){
-    dispatch(unselectClassmate())
-    document.querySelector("body").style.overflow = "initial"
-  }
-  function nextClassmates(){
-    setLastNumClassmate(prev => prev + 5)
-  }
-
-  const SquareCard = lastClassmates.map((f)=>{
-    return(
-      <div className='square-card' key={f.id} ref={widthElement} onClick={()=> selectUser(f.name,f.img,f.surname,f.birthday,f.height,f.status,f.stuwor,f.tel)}>
-        <div className="img-content_square">
-          <img src={f.img} alt="" />
-        </div>
-        <div className="price-content_square">
-          <h1 className='cost_square'>{f.name}</h1>
-          <h1 className='surname_f'>{f.surname}</h1>
-          <div className="social-medias">
-            {f.tg && (
-              <a target='_blank' rel='noreferrer' href={f.tg && `https://t.me/${f.tg}`} className='tg'>
-                <i className="fa-brands fa-telegram"></i>
-              </a>
-            )}
-            {f.insta && (
-              <a target='_blank' rel='noreferrer' href={f.insta && `https://instagram.com/${f.insta}`} className='insta'>
-                <i className="fa-brands fa-square-instagram"></i>
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    )
-  })
-
-  
+  const {isShown} = useSelector(state => state.classmate)
 
   function modalBody(){
     if(responsive){
@@ -177,7 +86,7 @@ export default function Mainpage() {
                     <Link key={lastSevenAdvsReverse[0]?._id} to={`/announcements/${lastSevenAdvsReverse[0]?._id}`}>
                       <div className="row main_first">
                         <div className="col main-news_img g-0">
-                          <img src={lastSevenAdvsReverse[0]?.img && `https://class11a.up.railway.app/${lastSevenAdvsReverse[0]?.img}`} alt="" />
+                          <img src={lastSevenAdvsReverse[0]?.img && `https://class11a.onrender.com/${lastSevenAdvsReverse[0]?.img}`} alt="" />
                         </div>
                         <div className="col main-news_content g-0 p-3">
                           <span className='date'><p>{lastSevenAdvsReverse[0]?.createdAt && changeDate(lastSevenAdvsReverse[0]?.createdAt.toString())}</p></span>
@@ -192,7 +101,7 @@ export default function Mainpage() {
                           <Link key={news._id} to={`/announcements/${news._id}`}>
                             <div className="col mb-3 g-0 d-flex">
                               <div className="img-content">
-                                <img src={news.img && `https://class11a.up.railway.app/${news.img}`} alt="" />
+                                <img src={news.img && `https://class11a.onrender.com/${news.img}`} alt="" />
                               </div>
                               <div className="text-content p-3">
                                 <span className="date"><p>{changeDate(news.createdAt.toString())}</p></span>
@@ -220,7 +129,7 @@ export default function Mainpage() {
                             </div>
                             <div className="content_">
                               <div className="img">
-                                <img src={l.img && `https://class11a.up.railway.app//${l.img}`} alt="" />
+                                <img src={l.img && `https://class11a.onrender.com/${l.img}`} alt="" />
                               </div>
                               <div className='txt'>{l.title}</div>
                             </div>
@@ -238,71 +147,6 @@ export default function Mainpage() {
                     </Link>
                   </div>
                 </div>
-                <div id="square--elements__carousel" ref={widthParent}>
-                    <div className="square--elements__floating" style={transformation}>
-                      {SquareCard}
-                      <div className="square-card more-students" onClick={nextClassmates}>
-                        <i className="fa-solid fa-graduation-cap me-1"></i>
-                        <h3>{classmates.length > lastNumClassmate ? "yana..." : "tugadi..."}</h3>
-                      </div>
-                    </div>
-                    <div className="buttons">
-                      <div className="dehover-btn" onClick={slideLeft} style={slide === 0 ? unmovingCarousel : movingCarousel}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="carousel-left">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                        </svg>
-                      </div>
-                      <div className="dehover-btn" onClick={slideRight} style={slide === -lastPointCarousel ? unmovingCarousel : movingCarousel}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="carousel-right">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                      </div>
-                    </div>
-                </div>
-                {isShown && (
-                  <div className="selected-classmate">
-                    <div className="svg" onClick={unselectUser}>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="exit-svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div className="classmate--info">
-                      <div className="img-selectedC">
-                        <img src={selectedClassmate.img} alt="" />
-                      </div>
-                      <div className="details_c">
-                        <div>
-                          <span>Ism</span>
-                          <span>{selectedClassmate?.name}</span>
-                        </div>
-                        <div>
-                          <span>Familya</span>
-                          <span>{selectedClassmate?.surname}</span>
-                        </div>
-                        <div>
-                          <span>Tug'ilgan sana</span>
-                          <span>{selectedClassmate?.birthday || "yashirilgan"}</span>
-                        </div>
-                        <div>
-                          <span>Bo'yi</span>
-                          <span>{selectedClassmate?.height}</span>
-                        </div>
-                        <div>
-                          <span>Status</span>
-                          <span>{selectedClassmate?.status || "yashirilgan"}</span>
-                        </div>
-                        <div>
-                          <span>O'qiydi / Ishlaydi</span>
-                          <span>{selectedClassmate?.stuwor}</span>
-                        </div>
-                        <div>
-                          <span>Telefon</span>
-                          <span>{selectedClassmate.tel === "" ? "yashirilgan" : selectedClassmate.tel}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
                 <Comment />
               </div>
             </main>
